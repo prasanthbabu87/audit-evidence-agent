@@ -1,0 +1,37 @@
+{
+  "audit_area": "IT General Controls - Change Management",
+  "period": "2026-07-01 to 2026-09-30",
+  "in_scope_systems": ["FinanceERP", "PaymentsAPI", "CustomerPortal"],
+  "controls": [
+    {
+      "id": "CM-01",
+      "name": "Change authorization",
+      "objective": "Production changes are authorized by an appropriate approver. Standard changes are approved before deployment; emergency changes are approved retrospectively within 2 business days.",
+      "attributes": ["approver recorded", "approval timestamp recorded", "standard: approved before deployment", "emergency: approved within 2 business days after deployment"]
+    },
+    {
+      "id": "CM-02",
+      "name": "Segregation of duties",
+      "objective": "The developer of a change does not approve it or deploy it to production.",
+      "attributes": ["developer != approver", "developer != deployer"]
+    },
+    {
+      "id": "CM-03",
+      "name": "Testing and user acceptance",
+      "objective": "Changes are tested and user acceptance evidence is retained before deployment.",
+      "attributes": ["test / UAT evidence attached"]
+    },
+    {
+      "id": "CM-04",
+      "name": "Emergency change post-implementation review",
+      "objective": "Emergency changes receive a post-implementation review (PIR) within 2 business days of deployment.",
+      "attributes": ["PIR recorded", "PIR within 2 business days"]
+    },
+    {
+      "id": "CM-05",
+      "name": "Completeness of change population",
+      "objective": "Every production deployment traces to a valid, approved change ticket (detects unauthorized changes).",
+      "attributes": ["deployment has ticket reference", "ticket reference exists in change system"]
+    }
+  ]
+}
